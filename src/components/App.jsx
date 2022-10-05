@@ -1,19 +1,52 @@
-import { UserCard } from './Profile/UserCard';
-import user from './Profile/user.json';
-import { StatisticDate } from './Statistics/Data.jsx';
-import data from './Statistics/data.json';
-import { FriendList } from './FriendList/FriendList';
-import friends from './FriendList/friends.json';
-import transaction from './TransactionHistory/transactions.json';
-import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import { Component } from 'react';
+// import { User } from "./User/User";
+import { Feedback } from "./Feedback";
+// import { users } from "data/users"
+// import { Section } from "./Section/Section";
+// import { Button } from './Button';
 
-export const App = () => {
-  return (
-    <>
-      <UserCard firstUser={user} />
-      <StatisticDate title="Upload stats" stats={data} />
-      <FriendList friends={friends} />
-      <TransactionHistory transaction={transaction} />
-    </>
-  );
-};
+export class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
+
+  
+  // clickHandler = () => {
+  //   this.setState({ isListShown: true });
+  // };
+
+  // userDelete = (userId) => {
+  //   this.setState(prevState => ({
+  //     users: prevState.users.filter(user => user.id !== userId)
+  //   }))
+  // }
+
+  // changeJobStatus = (userId) => {
+  //   this.setState(prevState => ({
+  //     users: prevState.users.map(user => {
+
+  //       if (user.id === userId) {
+  //         return {
+  //           ...user,
+  //           hasjob: !user.hasjob,
+  //         }
+  //       }
+  //       return user
+
+  //     }),
+  //   }));
+  // }
+
+  render() {
+    
+    return (
+      <>
+        
+        <Feedback options={ this.state } />
+        
+      </>
+    );
+  }
+}
