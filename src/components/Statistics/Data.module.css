@@ -1,0 +1,30 @@
+.statistics {
+
+    width: 250px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid #d8e0ea;
+}
+
+.statList {
+    display: flex;
+
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(100% / 5);
+    outline: 1px solid #d8e0ea;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    background-color: aliceblue;
+
+
+}
+
+.label {
+    padding-bottom: 5px;
+    font-weight: 500;
+}

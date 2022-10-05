@@ -1,0 +1,31 @@
+.transactionHistory {
+  width: 555px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 1px 4px rgba(126, 147, 255, 0.2);
+  border-radius: 6px;
+}
+
+.transactionDeskHead {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.17;
+
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background-color: #4cc6f5;
+  color: #ffffff;
+}
+
+.headItem {
+  padding: 20px;
+}
+
+.deskRow {
+  color: #7f8e9d;
+  text-align: center;
+}
+
+.deskRow:nth-child(2n) {
+  background-color: #ecf1f3;
+}
