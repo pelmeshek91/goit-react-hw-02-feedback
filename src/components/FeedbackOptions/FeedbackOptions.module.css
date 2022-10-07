@@ -1,0 +1,18 @@
+.btn {
+  width: 80px;
+  margin-left: 15px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: blueviolet;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  border: transparent;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #fff;
+  color: blueviolet;
+  outline: 2px solid blueviolet;
+}

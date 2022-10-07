@@ -1,10 +1,5 @@
 import { Component } from 'react';
-// import { User } from "./User/User";
 import { Feedback } from './Feedback';
-// import { users } from "data/users"
-// import { Section } from "./Section/Section";
-// import { Button } from './Button';
-
 
 export class App extends Component {
   state = {
@@ -39,8 +34,8 @@ export class App extends Component {
     return positive;
   };
 
-   render() {
-    const total = this.countTotalFeedback()
+  render() {
+    const total = this.countTotalFeedback();
     return (
       <>
         <Feedback
