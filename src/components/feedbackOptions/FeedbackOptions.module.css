@@ -1,0 +1,14 @@
+.btn {
+    min-width: 60px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(135, 103, 164);
+    background-color: rgb(228, 208, 246);
+    color: rgb(89, 57, 118);
+    font-weight: 600;
+}
+
+.btnWrap {
+    display: flex;
+    gap: 10px;
+}

@@ -8,6 +8,7 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
+
   countFeedback = e => {
     this.setState(prevState => {
       const keys = Object.keys(prevState);
@@ -16,19 +17,6 @@ export class App extends Component {
       return { [valueFromBtn]: prevState[res] + 1 };
     });
   };
-  //({
-  //   good: prevState.good + 1,
-  // }));
-  // handleClickNeutral = () => {
-  //   this.setState(prevState => ({
-  //     neutral: prevState.neutral + 1,
-  //   }));
-  // };
-  // handleClickBad = () => {
-  //   this.setState(prevState => ({
-  //     bad: prevState.bad + 1,
-  //   }));
-  // };
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -50,9 +38,6 @@ export class App extends Component {
           options={this.state}
           total={this.countTotalFeedback()}
           PositiveFeedback={this.countPositiveFeedbackPercentage}
-          // onClickGood={this.handleClickGood}
-          // onClickNeutral={this.handleClickNeutral}
-          // onClickBad={this.handleClickBad}
           countFeedback={this.countFeedback}
         />
       </>
