@@ -8,21 +8,27 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
-  handleClickGood = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
+  countFeedback = e => {
+    this.setState(prevState => {
+      const keys = Object.keys(prevState);
+      const valueFromBtn = e.target.textContent.toLowerCase();
+      const res = keys.filter(key => key === valueFromBtn);
+      return { [valueFromBtn]: prevState[res] + 1 };
+    });
   };
-  handleClickNeutral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-  handleClickBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-  };
+  //({
+  //   good: prevState.good + 1,
+  // }));
+  // handleClickNeutral = () => {
+  //   this.setState(prevState => ({
+  //     neutral: prevState.neutral + 1,
+  //   }));
+  // };
+  // handleClickBad = () => {
+  //   this.setState(prevState => ({
+  //     bad: prevState.bad + 1,
+  //   }));
+  // };
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;
@@ -44,9 +50,10 @@ export class App extends Component {
           options={this.state}
           total={this.countTotalFeedback()}
           PositiveFeedback={this.countPositiveFeedbackPercentage}
-          onClickGood={this.handleClickGood}
-          onClickNeutral={this.handleClickNeutral}
-          onClickBad={this.handleClickBad}
+          // onClickGood={this.handleClickGood}
+          // onClickNeutral={this.handleClickNeutral}
+          // onClickBad={this.handleClickBad}
+          countFeedback={this.countFeedback}
         />
       </>
     );
