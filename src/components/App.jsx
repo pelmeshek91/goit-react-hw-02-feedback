@@ -11,9 +11,8 @@ export class App extends Component {
 
   countFeedback = e => {
     this.setState(prevState => {
-      const keys = Object.keys(prevState);
       const valueFromBtn = e.target.textContent.toLowerCase();
-      const res = keys.filter(key => key === valueFromBtn);
+      const res = Object.keys(prevState).filter(key => key === valueFromBtn);
       return { [valueFromBtn]: prevState[res] + 1 };
     });
   };

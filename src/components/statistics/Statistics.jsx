@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types';
+
 export const Statistics = ({
   options,
   countTotalFeedback,
   PositiveFeedback,
 }) => {
-  const keys = Object.keys(options);
-
   return (
     <div>
-      {keys.map(key => {
+      {Object.keys(options).map(key => {
         return (
           <p key={key}>
             {key.replace(key[0], key[0].toUpperCase())}: {options[key]}
@@ -19,4 +19,10 @@ export const Statistics = ({
       <p>Positive feedback: {PositiveFeedback()}% </p>
     </div>
   );
+};
+
+Statistics.propTypes = {
+  PositiveFeedback: PropTypes.func.isRequired,
+  countFeedback: PropTypes.func.isRequired,
+  options: PropTypes.object.isRequired,
 };
