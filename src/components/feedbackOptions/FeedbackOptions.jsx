@@ -1,13 +1,17 @@
 import s from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
+export const FeedbackOptions = ({ onLeaveFeedback, options, lang }) => {
   return (
     <div className={s.btnWrap}>
-      {Object.keys(options).map(key => {
+      {options.map(({ name, title }) => {
         return (
-          <button onClick={onLeaveFeedback} key={key} className={s.btn}>
-            {key.replace(key[0], key[0].toUpperCase())}
+          <button
+            onClick={() => onLeaveFeedback(name)}
+            key={name}
+            className={s.btn}
+          >
+            {title[lang]}
           </button>
         );
       })}
@@ -17,5 +21,5 @@ export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
-  options: PropTypes.object.isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

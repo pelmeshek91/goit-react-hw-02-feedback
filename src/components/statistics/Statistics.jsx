@@ -16,13 +16,13 @@ export const Statistics = ({
       })}
 
       <p>Total: {countTotalFeedback} </p>
-      <p>Positive feedback: {PositiveFeedback()}% </p>
+      <p>Positive feedback: {PositiveFeedback}% </p>
     </div>
   );
 };
 
 Statistics.propTypes = {
-  PositiveFeedback: PropTypes.func.isRequired,
-  countFeedback: PropTypes.func.isRequired,
+  PositiveFeedback: PropTypes.number.isRequired,
+  countTotalFeedback: PropTypes.number.isRequired,
   options: PropTypes.object.isRequired,
 };
